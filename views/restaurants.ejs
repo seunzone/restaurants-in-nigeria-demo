@@ -1,0 +1,10 @@
+<% include partials/header %>
+<h1>Hello App</h1>
+<% restaurants.forEach(function(restaurants){ %>
+    <div>
+        <h4><%= restaurants.name %></h4>
+        <img src="<%= restaurants.image %>">
+
+    </div>
+<% }); %>
+<% include partials/footer %>

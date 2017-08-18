@@ -1,0 +1,23 @@
+{
+  "name": "restaurants-in-nigeria-demo",
+  "version": "1.0.0",
+  "description": "A demo App just to practise my fingers with nodeJS\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001bexercise\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seunzone/restaurants-in-nigeria-demo.git"
+  },
+  "author": "@seunzone",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/seunzone/restaurants-in-nigeria-demo/issues"
+  },
+  "homepage": "https://github.com/seunzone/restaurants-in-nigeria-demo#readme",
+  "dependencies": {
+    "ejs": "^2.5.7",
+    "express": "^4.15.4"
+  }
+}
