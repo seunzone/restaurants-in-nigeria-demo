@@ -1,11 +1,22 @@
 var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
+var mongoose = require("mongoose");
 // var bootstrap = require('bootstrap');
 
-
+mongoose.createConnection('mongodb://localhost/myapp');
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
+
+
+//SCHEMA SETUP
+var foodCamp = new mongoose.Schema({
+    name: String,
+    image: String
+});
+
+var Restaurant = mongoose.model("Restaurant", foodCamp);
+
 
 
 
