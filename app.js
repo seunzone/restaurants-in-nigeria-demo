@@ -2,21 +2,37 @@ var express = require("express");
 var app = express();
 var bodyParser = require("body-parser");
 var mongoose = require("mongoose");
-// var bootstrap = require('bootstrap');
+// // var bootstrap = require('bootstrap');
 
-mongoose.createConnection('mongodb://localhost/myapp');
+mongoose.connect("mongodb://localhost/food_db");
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 
 
+
+
+
 //SCHEMA SETUP
-var foodCamp = new mongoose.Schema({
+var foodSchema = new mongoose.Schema({
     name: String,
     image: String
 });
 
-var Restaurant = mongoose.model("Restaurant", foodCamp);
+var Restaurant = mongoose.model("Restaurant", foodSchema);
 
+Restaurant.create(
+
+
+    {name: "Mama Lokoja", image:"https://scontent.flos3-1.fna.fbcdn.net/v/t1.0-1/p160x160/20767815_1577821268935675_1650698914966330585_n.jpg?_nc_eui2=v1%3AAeFu6tl94dolWmOLddc6bBX126ntjmrFBRbMOSPLhqaJkNJBzr-GZotQhnAazP5DSbdqRcsHm5ZFO24epDfeBByUmYftqfsBHjGkanAfOQ47Gw&oh=20c5bb7fe50a75b4bc2f88cc9e6781e8&oe=5A37CF0D"}, function(err, restaurant){
+        if(err){
+            console.log(err);
+        } else{
+            console.log("New Food Site: ");
+            console.log(restaurant);
+        }
+    }
+);
 
 
 
@@ -38,8 +54,14 @@ app.get("/", function(req, res){
 });
 
 app.get("/restaurants", function(req,res){
-    
-    res.render("restaurants", {restaurants:restaurants});
+    Restaurant.find({}, function(err, allRestaurants){
+        if(err){
+            console.log(err);
+        }else{
+             res.render("restaurants", {restaurants:allRestaurants});
+        }
+    });
+   
 });
 
 app.post("/restaurants", function(req, res){
