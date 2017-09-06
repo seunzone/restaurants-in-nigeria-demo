@@ -18,16 +18,17 @@
     
 
    <div class="row text-center" style="display: flex; flex-wrap: wrap;"> 
-        <% restaurants.forEach(function(restaurants){ %>
+        <% restaurants.forEach(function(restaurant){ %>
         <div class="col-md-3 col-sm-6">
             <div class="thumbnail">
-                <img src="<%= restaurants.image %>">
+                <img src="<%= restaurant.image %>">
             </div>
             <div class="caption">
-                <h4><%= restaurants.name %></h4>
+                <h4><%= restaurant.name %></h4>
             </div>
-            
-            
+            <p>
+                <a href="/restaurants/<%= restaurant._id %>" class="btn btn-primary">More Info</a>
+            </p>
 
         </div>
 
